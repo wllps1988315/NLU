@@ -1,0 +1,68 @@
+#!/usr/bin/python
+# coding:utf8
+
+"""
+@version: 0.1
+@author: zhou_lei
+@license:
+@contact:
+@site: http://www.gowild.com
+@software: PyCharm Community Edition
+@file: TfIdf.py
+@time: 17/03/31 10:10
+"""
+import os
+import math
+import jieba
+
+from amber.logger import logger
+'''
+数据少,后面根据大量数据去细化tf-idf
+'''
+
+
+class TfIdf:
+    def __init__(self):
+        self.tf_idf = {}
+        tf_idf_txt = os.path.join(os.getcwd(), "amber", "intent", "io.txt")
+        if os.path.exists(tf_idf_txt):
+            f = open("data/intent/io.txt")
+            word_frequency = {}
+            word_cnt, doc_cnt = 0, 0
+            for line in f:
+                words = jieba.cut(line)
+                doc_cnt += 1
+                for word in words:
+                    if word not in word_frequency:
+                        word_frequency[word] = 1
+                    else:
+                        word_frequency[word] += 1
+                    word_cnt += 1
+            # try:
+                # tf_idf = {}
+                # for word in word_frequency:
+                #     tf = word_frequency[word]/(word_cnt*1.0)
+                #     idf = math.log(doc_cnt/word_frequency[word])
+                #     tf_idf[word] = tf * idf * 10000
+                # tf_idf = {}
+                # for word in word_frequency:
+                #     tf = word_frequency[word]/(word_cnt*1.0)
+                # tf_idf_sort = sorted(tf_idf.items(), cmp=lambda x, y: int(y[1]*10000) - int(x[1]*10000))
+            # except Exception as e:
+            #     logger.exception(e)
+
+        if os.path.exists(tf_idf_txt):
+            f = open(tf_idf_txt)
+            for line in f:
+                result = line.split()
+                if len(result) == 2:
+                    word, score = result[0], result[1]
+                    self.tf_idf[word] = float(score)
+
+    def get_tf_idf(self, word):
+        if word in self.tf_idf:
+            return self.tf_idf[word]
+        return 0.6
+
+if __name__ == '__main__':
+    tf_idf = TfIdf()
