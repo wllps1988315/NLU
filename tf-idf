@@ -3,30 +3,22 @@
 
 """
 @version: 0.1
-@author: zhou_lei
+@author: Lan
 @license:
 @contact:
-@site: http://www.gowild.com
 @software: PyCharm Community Edition
 @file: TfIdf.py
-@time: 17/03/31 10:10
 """
 import os
 import math
 import jieba
 
-from amber.logger import logger
-'''
-数据少,后面根据大量数据去细化tf-idf
-'''
-
-
 class TfIdf:
     def __init__(self):
         self.tf_idf = {}
-        tf_idf_txt = os.path.join(os.getcwd(), "amber", "intent", "io.txt")
+        tf_idf_txt = os.path.join(os.getcwd(), "semantic", "nlu", "io.txt")
         if os.path.exists(tf_idf_txt):
-            f = open("data/intent/io.txt")
+            f = open("data/nlu/io.txt")
             word_frequency = {}
             word_cnt, doc_cnt = 0, 0
             for line in f:
