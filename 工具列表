@@ -1,0 +1,157 @@
+Contents 列表
+
+1. Chinese NLP Toolkits 中文NLP工具
+
+Toolkits 综合NLP工具包
+
+Popular NLP Toolkits for English/Multi-Language 常用的英文或支持多语言的NLP工具包
+
+Chinese Word Segment 中文分词
+
+Information Extraction 信息提取
+
+QA & Chatbot 问答和聊天机器人
+
+2. Corpus 中文语料
+
+3. Organizations 相关中文NLP组织和会议
+
+4. Learning Materials 学习资料
+
+Chinese NLP Toolkits 中文NLP工具
+
+Toolkits 综合NLP工具包
+
+THULAC 中文词法分析工具包 by 清华 (C++/Java/Python)
+
+NLPIR by 中科院 (Java)
+
+LTP 语言技术平台 by 哈工大 (C++)
+
+FudanNLP by 复旦 (Java)
+
+BosonNLP by Boson (商业API服务)
+
+HanNLP (Java)
+
+SnowNLP (Python) Python library for processing Chinese text
+
+YaYaNLP (Python) 纯python编写的中文自然语言处理包，取名于“牙牙学语”
+
+DeepNLP (Python) Deep Learning NLP Pipeline implemented on Tensorflow with pretrained Chinese models.
+
+chinese_nlp (C++ & Python) Chinese Natural Language Processing tools and examples
+
+Popular NLP Toolkits for English/Multi-Language 常用的英文或支持多语言的NLP工具包
+
+CoreNLP by Stanford (Java)
+
+NLTK (Python)
+
+spaCy (Python)
+
+OpenNLP (Java)
+
+gensim (Python) Gensim is a Python library for topic modelling, document indexing and similarity retrieval with large corpora.
+
+Chinese Word Segment 中文分词
+
+Jieba 结巴中文分词 (Python) 做最好的 Python 中文分词组件
+
+kcws 深度学习中文分词 (Python) BiLSTM+CRF与IDCNN+CRF
+
+Genius 中文分词 (Python) Genius是一个开源的python中文分词组件，采用 CRF(Conditional Random Field)条件随机场算法。
+
+loso 中文分词 (Python)
+
+Information Extraction 信息提取
+
+MITIE (C++) library and tools for information extraction
+
+Duckling (Haskell) Language, engine, and tooling for expressing, testing, and evaluating composable language rules on input strings.
+
+IEPY (Python) IEPY is an open source tool for Information Extraction focused on Relation Extraction.
+
+Snorkel: A training data creation and management system focused on information extraction
+
+Neural Relation Extraction implemented with LSTM in TensorFlow
+
+A neural network model for Chinese named entity recognition
+
+Information-Extraction-Chinese Chinese Named Entity Recognition with IDCNN/biLSTM+CRF, and Relation Extraction with biGRU+2ATT 中文实体识别与关系提取
+
+QA & Chatbot 问答和聊天机器人
+
+Rasa NLU (Python) turn natural language into structured data
+
+Chatterbot (Python) ChatterBot is a machine learning, conversational dialog engine for creating chat bots.
+
+Chatbot (Python) 基於向量匹配的情境式聊天機器人
+
+Tipask (PHP) 一款开放源码的PHP问答系统，基于Laravel框架开发，容易扩展，具有强大的负载能力和稳定性。
+
+QuestionAnsweringSystem (Java) 一个Java实现的人机问答系统，能够自动分析问题并给出候选答案。
+
+使用TensorFlow实现的Sequence to Sequence的聊天机器人模型 (Python)
+
+使用深度学习算法实现的中文阅读理解问答系统
+
+Corpus 中文语料
+
+开放知识图谱OpenKG.cn
+
+CLDC中文语言资源联盟
+
+用于训练中英文对话系统的语料库 Datasets for Training Chatbot System
+
+中文 Wikipedia Dump
+
+98年人民日报词性标注库@百度盘
+
+百度百科100gb语料@百度盘 密码neqs 出处应该是梁斌penny大神
+
+搜狗20061127新闻语料(包含分类)@百度盘
+
+UDChinese (for training spaCy POS)
+
+八卦版問答中文語料
+
+中文word2vec模型
+
+中文突发事件语料库 Chinese Emergency Corpus
+
+dgk_lost_conv 中文对白语料 chinese conversation corpus
+
+漢語拆字字典
+
+中国股市公告信息爬取 通过python脚本从巨潮网络的服务器获取中国股市（sz,sh）的公告(上市公司和监管机构)
+
+tushare财经数据接口 TuShare是一个免费、开源的python财经数据接口包。
+
+保险行业语料库 [52nlp介绍Blog] OpenData in insurance area for Machine Learning Tasks
+
+最全中华古诗词数据库 唐宋两朝近一万四千古诗人, 接近5.5万首唐诗加26万宋诗. 两宋时期1564位词人，21050首词。
+
+中文语料小数据 包含了中文命名实体识别、中文关系识别、中文阅读理解等一些小量数据
+
+Organizations 相关中文NLP组织和会议
+
+中国中文信息学会
+
+NLP Conference Calender Main conferences, journals, workshops and shared tasks in NLP community.
+
+Learning Materials 学习资料
+
+中文Deep Learning Book
+
+Stanford CS224n Natural Language Processing with Deep Learning 2017
+
+Oxford CS DeepNLP 2017
+
+Speech and Language Processing by Dan Jurafsky and James H. Martin
+
+52nlp 我爱自然语言处理
+
+hankcs 码农场
+
+文本处理实践课资料 文本处理实践课资料，包含文本特征提取（TF-IDF），文本分类，文本聚类，word2vec训练词向量及同义词词林中文词语相似度计算、文档自动摘要，信息抽取，情感分析与观点挖掘等实验。
