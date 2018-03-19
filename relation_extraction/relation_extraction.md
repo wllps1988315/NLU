@@ -89,3 +89,10 @@ NP0 such as NP1{,NP2 ...,(and|or)NPi},i ≥ 1  <br>
 hyponym(Gelidium,red algae)  <br>
 
 ![](./pic/句法模板发现上位词.png)
+
+上图为hearst提出的5个模板,用于推理上位关系;NPH表示父节点(上位词).
+
+现代版本基于模板方法基于以上添加了命名实体识别的限制.
+比如我们的目标是,回复"who holds what office in which organizaiton"这种问句,我们可以用以下模板:<br>
+
+![](./pic/模板.png)
