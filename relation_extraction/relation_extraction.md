@@ -118,3 +118,50 @@ hyponym(Gelidium,red algae)  <br>
 从所有的句子中,抽取和泛化上下文实体以学习新的模板.
 下图为基本算法:<br>
 ![](./pic/基于bootsrapping的种子实体对学习关系.png)
+
+举个例子,创建种子对airline/hub,我们知道Ryanair(瑞安航空)在Chrleroi(沙勒罗瓦)有一个hub(枢纽).就可以用这个种子事实去发现新的模板.
+发现语料中提及的其它关系.搜索术语Ryanair,Charleroi和hub.可能发现以下句子集合:<br>
+(21.6) Budget airline Ryanair, which uses Charleroi as a hub, scrapped all weekend flights out of the airport.   <br>
+(21.7) All flights in and out of Ryanair’s Belgian hub at Charleroi airport were grounded on Friday...   <br>
+(21.8) A spokesman at Charleroi, a main hub for Ryanair, estimated that 8000 passengers had already been affected.  <br>
+
+从以上结果,可以使用实体上下文间提及的实体,实体掐你个词,后两个词,两个词的命名实体类型,或者其它特征,抽取通用的模板: <br>
+/ [ORG], which uses [LOC] as a hub /<br>
+   / [ORG]’s hub at [LOC] /<br>
+   / [LOC] a main hub for [ORG] /<br>
+
+这些新的模板可用于搜索新的元组.
+Bootstrapping可以给新的元组分配置信度(confidence values)以避免语义转移(semantic drift).
+语义转移问题中,错误的模板会导致错误的元组,导致抽取关系的意思转移.例如:<br>
+(21.9) Sydney has a ferry hub at Circular Quay.   <br>
+如果以上例子作为一个正例,那么会导致元组⟨Sydney,CircularQuay⟩错误.基于此模板的元组讲会导致更多的错误.
+
+模板置信度基于两个因子:<br>
+(1)模板性能遵循目前的元组<br>
+(2)模板的生产率,也就是匹配到的数量.<br>
+
+
+给出文档集合D,元组集合T,模板p,那么需要跟踪两个因素:
+
+(1)hit:在文档D中,模板p匹配的元组集合T.(the set of tuples in T that p matches while looking in D)<br>
+(2)finds:模板p在文档D中匹配的所有元组.(finds:The total set of tuples that p finds in D) <br>
+
+公式如下(Riloff and Jones,1999)<br>
+
+![](./pic/公式1.png)
+
+以上公式会形式化的产生一个概率.
+
+提出的新元组可以做置信度估计,通过在文档集D中匹配的所有的模板P′ (Agichtein and Gravano, 2000).
+结合这个置信度的一个方法是the noisy-or technique.
+假设模板P支持给出的元组,每个都进行了置信度估计.在noisy-or模型中,有两个假设.
+第一个,如果提出的元组是错误的,那么所有支持的模板都是错误的.
+第二个,个别错误是独立的.
+如果宽松的处理置信度,那么个别模板P错误的置信度为1 − Conf ( p);
+新元组置信度公式如下:<br>
+
+![](./pic/公式2.png)
+
+设置保守的置信度去接受新模板将会帮助系统防止转移目标关系.
+(settring conservative confidence thresholds for th acceptance of new patterns and tuples during the bootstrapping process helps prevent the
+system from drifting away from the targeted relation)
